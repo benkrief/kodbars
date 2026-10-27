@@ -30,3 +30,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Secrets locaux et captures de vérification
+.env
+.env.*
+!.env.example
+.playwright-cli/

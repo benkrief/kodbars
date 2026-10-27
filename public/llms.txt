@@ -1,10 +1,20 @@
 # Kodbars
+> Kodbars est la marque de développement web de Benjamin Krief (BSKonseil), entrepreneur individuel basé aux Lilas (93260), près de Paris. Sites vitrines, applications métier, SEO et GEO pour indépendants et PME. Intervention en Île-de-France et à distance en France.
 
-> Kodbars (by BSKonseil) est une agence de développement web basée aux Lilas (93260), près de Paris, dirigée par Benjamin Krief. Elle crée des sites vitrines, des applications web sur-mesure et accompagne le référencement SEO et GEO des indépendants et PME en France.
+## Prestations
+- [Site vitrine](https://kodbars.fr/creation-site-vitrine) : 3 à 5 pages, budget indicatif de 900 à 1 800 €.
+- [Application web](https://kodbars.fr/application-web) : première version métier ciblée, budget indicatif de 3 000 à 6 000 €.
+- [SEO et GEO](https://kodbars.fr/referencement-seo-geo) : audit et premières corrections, budget indicatif de 350 à 700 €. Aucune position ni citation garantie.
+- [Maintenance](https://kodbars.fr/maintenance-web) : 49 à 99 € par mois, périmètre défini au devis.
 
-## Pages
-- [Accueil](/): présentation et questions fréquentes
-- [Services](/services): site vitrine, application web, SEO & GEO, maintenance
-- [Méthode](/methode): les 5 étapes d'un projet
-- [Contact](/contact): devis gratuit sous 48 h
-- [Mentions légales](/mentions-legales)
+TVA non applicable, art. 293 B du CGI. Domaine, hébergement et abonnements tiers non inclus. Les pages de chaque prestation précisent les limites.
+
+## Informations
+- [Accueil](https://kodbars.fr/)
+- [Prestations et tarifs](https://kodbars.fr/services)
+- [Méthode](https://kodbars.fr/methode)
+- [Benjamin Krief](https://kodbars.fr/a-propos)
+- [Contact](https://kodbars.fr/contact)
+- [Mentions légales et confidentialité](https://kodbars.fr/mentions-legales)
+
+Contact : contact@kodbars.fr

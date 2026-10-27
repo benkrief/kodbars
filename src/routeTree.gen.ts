@@ -10,19 +10,46 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AProposRouteImport } from './routes/a-propos'
+import { Route as ApplicationWebRouteImport } from './routes/application-web'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CreationSiteVitrineRouteImport } from './routes/creation-site-vitrine'
+import { Route as MaintenanceWebRouteImport } from './routes/maintenance-web'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as MethodeRouteImport } from './routes/methode'
+import { Route as ReferencementSeoGeoRouteImport } from './routes/referencement-seo-geo'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ApiContactRouteImport } from './routes/api.contact'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AProposRoute = AProposRouteImport.update({
+  id: '/a-propos',
+  path: '/a-propos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApplicationWebRoute = ApplicationWebRouteImport.update({
+  id: '/application-web',
+  path: '/application-web',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreationSiteVitrineRoute = CreationSiteVitrineRouteImport.update({
+  id: '/creation-site-vitrine',
+  path: '/creation-site-vitrine',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MaintenanceWebRoute = MaintenanceWebRouteImport.update({
+  id: '/maintenance-web',
+  path: '/maintenance-web',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
@@ -35,54 +62,128 @@ const MethodeRoute = MethodeRouteImport.update({
   path: '/methode',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReferencementSeoGeoRoute = ReferencementSeoGeoRouteImport.update({
+  id: '/referencement-seo-geo',
+  path: '/referencement-seo-geo',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/application-web': typeof ApplicationWebRoute
   '/contact': typeof ContactRoute
+  '/creation-site-vitrine': typeof CreationSiteVitrineRoute
+  '/maintenance-web': typeof MaintenanceWebRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/methode': typeof MethodeRoute
+  '/referencement-seo-geo': typeof ReferencementSeoGeoRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/contact': typeof ApiContactRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/application-web': typeof ApplicationWebRoute
   '/contact': typeof ContactRoute
+  '/creation-site-vitrine': typeof CreationSiteVitrineRoute
+  '/maintenance-web': typeof MaintenanceWebRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/methode': typeof MethodeRoute
+  '/referencement-seo-geo': typeof ReferencementSeoGeoRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/contact': typeof ApiContactRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/a-propos': typeof AProposRoute
+  '/application-web': typeof ApplicationWebRoute
   '/contact': typeof ContactRoute
+  '/creation-site-vitrine': typeof CreationSiteVitrineRoute
+  '/maintenance-web': typeof MaintenanceWebRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/methode': typeof MethodeRoute
+  '/referencement-seo-geo': typeof ReferencementSeoGeoRoute
   '/services': typeof ServicesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/api/contact': typeof ApiContactRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/mentions-legales' | '/methode' | '/services'
+  fullPaths:
+    | '/'
+    | '/a-propos'
+    | '/application-web'
+    | '/contact'
+    | '/creation-site-vitrine'
+    | '/maintenance-web'
+    | '/mentions-legales'
+    | '/methode'
+    | '/referencement-seo-geo'
+    | '/services'
+    | '/sitemap.xml'
+    | '/api/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/mentions-legales' | '/methode' | '/services'
+  to:
+    | '/'
+    | '/a-propos'
+    | '/application-web'
+    | '/contact'
+    | '/creation-site-vitrine'
+    | '/maintenance-web'
+    | '/mentions-legales'
+    | '/methode'
+    | '/referencement-seo-geo'
+    | '/services'
+    | '/sitemap.xml'
+    | '/api/contact'
   id:
     | '__root__'
     | '/'
+    | '/a-propos'
+    | '/application-web'
     | '/contact'
+    | '/creation-site-vitrine'
+    | '/maintenance-web'
     | '/mentions-legales'
     | '/methode'
+    | '/referencement-seo-geo'
     | '/services'
+    | '/sitemap.xml'
+    | '/api/contact'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AProposRoute: typeof AProposRoute
+  ApplicationWebRoute: typeof ApplicationWebRoute
   ContactRoute: typeof ContactRoute
+  CreationSiteVitrineRoute: typeof CreationSiteVitrineRoute
+  MaintenanceWebRoute: typeof MaintenanceWebRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   MethodeRoute: typeof MethodeRoute
+  ReferencementSeoGeoRoute: typeof ReferencementSeoGeoRoute
   ServicesRoute: typeof ServicesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiContactRoute: typeof ApiContactRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -94,11 +195,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a-propos': {
+      id: '/a-propos'
+      path: '/a-propos'
+      fullPath: '/a-propos'
+      preLoaderRoute: typeof AProposRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/application-web': {
+      id: '/application-web'
+      path: '/application-web'
+      fullPath: '/application-web'
+      preLoaderRoute: typeof ApplicationWebRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creation-site-vitrine': {
+      id: '/creation-site-vitrine'
+      path: '/creation-site-vitrine'
+      fullPath: '/creation-site-vitrine'
+      preLoaderRoute: typeof CreationSiteVitrineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maintenance-web': {
+      id: '/maintenance-web'
+      path: '/maintenance-web'
+      fullPath: '/maintenance-web'
+      preLoaderRoute: typeof MaintenanceWebRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mentions-legales': {
@@ -115,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MethodeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/referencement-seo-geo': {
+      id: '/referencement-seo-geo'
+      path: '/referencement-seo-geo'
+      fullPath: '/referencement-seo-geo'
+      preLoaderRoute: typeof ReferencementSeoGeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -122,15 +258,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AProposRoute: AProposRoute,
+  ApplicationWebRoute: ApplicationWebRoute,
   ContactRoute: ContactRoute,
+  CreationSiteVitrineRoute: CreationSiteVitrineRoute,
+  MaintenanceWebRoute: MaintenanceWebRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   MethodeRoute: MethodeRoute,
+  ReferencementSeoGeoRoute: ReferencementSeoGeoRoute,
   ServicesRoute: ServicesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiContactRoute: ApiContactRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

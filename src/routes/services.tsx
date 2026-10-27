@@ -1,39 +1,46 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Layout, PageHeader, CTA, seo } from "@/components/site";
-
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Layout, PageHeader, CTA } from "@/components/site";
+import { services, pricingNote } from "@/lib/services";
+import { seo } from "@/lib/site-info";
 export const Route = createFileRoute("/services")({
-  head: () => seo(
-    "Services — Création de site vitrine, app web, SEO | Kodbars",
-    "Création de sites vitrines, développement d'applications web sur-mesure, référencement SEO et GEO, maintenance. Découvrez les services de Kodbars.",
-    "/services",
-  ),
+  head: () =>
+    seo(
+      "Sites vitrines, applications web et SEO : prestations et tarifs | Kodbars",
+      "Découvrez les prestations Kodbars aux Lilas, près de Paris : site vitrine de 900 à 1 800 €, application web, SEO et maintenance. Budgets et périmètres détaillés.",
+      "/services",
+    ),
   component: Services,
 });
-
-const services = [
-  { t: "Site vitrine", d: "Présentez votre activité avec un site moderne, adapté au mobile et facile à mettre à jour.", items: ["Design sur-mesure", "Adapté mobile et tablette", "Formulaire de contact", "Mise en ligne et nom de domaine"] },
-  { t: "Application web", d: "Un outil pensé pour votre métier : espace client, prise de rendez-vous, tableau de bord.", items: ["Analyse du besoin", "Comptes utilisateurs", "Paiement en ligne", "Évolutions continues"] },
-  { t: "SEO & GEO", d: "Soyez visible sur Google et recommandé par les assistants IA (ChatGPT, Claude, Gemini).", items: ["Audit et mots-clés", "Contenus structurés", "Fiche Google Business", "Suivi des positions"] },
-  { t: "Maintenance", d: "Votre site reste rapide, sécurisé et à jour, sans que vous ayez à vous en occuper.", items: ["Mises à jour", "Sauvegardes", "Petites modifications", "Support réactif"] },
-];
-
 function Services() {
   return (
     <Layout>
-      <PageHeader tag="Services" title="Ce que Kodbars fait pour vous" intro="Du premier site à l'application métier, un seul interlocuteur du début à la fin." />
-      <section className="mx-auto grid max-w-6xl gap-6 px-5 py-16 md:grid-cols-2">
-        {services.map((s, i) => (
-          <article key={s.t} className="rounded-lg border-2 border-primary bg-card p-8">
-            <p className="tag">0{i + 1}</p>
-            <h2 className="mt-2 text-2xl font-extrabold text-primary">{s.t}</h2>
-            <p className="mt-3 text-muted-foreground">{s.d}</p>
-            <ul className="mt-5 space-y-2">
-              {s.items.map((it) => (
-                <li key={it} className="flex gap-3"><span className="font-mono text-accent-foreground bg-accent px-1">✓</span>{it}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
+      <PageHeader
+        tag="Services & budgets"
+        title="Un site ou un outil qui répond à votre besoin"
+        intro="Un périmètre clair, un budget annoncé et Benjamin comme interlocuteur du premier échange à la livraison."
+      />
+      <section className="mx-auto max-w-6xl px-5 py-14">
+        <div className="grid gap-6 md:grid-cols-2">
+          {services.map((s, i) => (
+            <article
+              key={s.path}
+              className="flex flex-col rounded-lg border-2 border-primary bg-card p-7"
+            >
+              <p className="tag">0{i + 1}</p>
+              <h2 className="mt-3 text-2xl font-extrabold">{s.name}</h2>
+              <p className="mt-3 flex-1 text-muted-foreground">{s.description}</p>
+              <p className="mt-5 text-xl font-bold">{s.price}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{s.timeline}</p>
+              <Link
+                to={s.path}
+                className="mt-6 self-start font-bold text-highlight underline underline-offset-4"
+              >
+                Découvrir la prestation →
+              </Link>
+            </article>
+          ))}
+        </div>
+        <p className="mt-7 max-w-3xl text-sm text-muted-foreground">{pricingNote}</p>
       </section>
       <CTA />
     </Layout>

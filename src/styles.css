@@ -1,13 +1,12 @@
 @import "tailwindcss" source(none);
 @source "../src";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-sans: "Manrope", system-ui, sans-serif;
-  --font-display: "Archivo", "Manrope", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Manrope", system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
   --radius-sm: 0.125rem;
   --radius-md: 0.25rem;
   --radius-lg: 0.375rem;
@@ -54,8 +53,8 @@
   --accent: oklch(0.78 0.13 210);
   --accent-foreground: oklch(0.25 0.08 255);
   /* orange from the K */
-  --highlight: oklch(0.74 0.16 50);
-  --highlight-foreground: oklch(0.22 0.05 50);
+  --highlight: #ad4307;
+  --highlight-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(0.88 0.02 240);
@@ -72,7 +71,9 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -87,7 +88,9 @@
   font-size: 0.95rem;
   border: 2px solid var(--primary);
   border-radius: var(--radius);
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
   &:hover {
     transform: translate(-2px, -2px);
     box-shadow: 4px 4px 0 var(--highlight);
@@ -106,4 +109,60 @@
   font-size: 0.8rem;
   color: var(--highlight);
   font-weight: 600;
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/manrope-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/fonts/manrope-latin-ext.woff2") format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+:focus-visible {
+  outline: 3px solid var(--highlight);
+  outline-offset: 4px;
+}
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -8rem;
+  z-index: 50;
+  padding: 0.8rem 1rem;
+  background: var(--primary);
+  color: white;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+.btn {
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+.btn:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+.btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
