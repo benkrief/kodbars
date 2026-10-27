@@ -1,5 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useRef, type ReactNode } from "react";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { CONTACT_EMAIL } from "@/lib/site-info";
 
 const nav = [
@@ -29,60 +30,71 @@ export function Layout({ children }: { children: ReactNode }) {
       </a>
       <header className="relative z-10 border-b-2 border-primary bg-card">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-4">
-          <Link to="/" aria-label="Kodbars, accueil" className="flex items-center gap-3">
-            <img src="/logo.svg" alt="" width={44} height={44} />
-            <span className="font-display text-xl font-extrabold text-primary">KODBARS</span>
+          <Link to="/" aria-label="Kodbars, accueil" className="flex items-center gap-2 sm:gap-3">
+            <img
+              src="/logo.svg"
+              alt=""
+              width={44}
+              height={44}
+              className="h-9 w-9 sm:h-11 sm:w-11"
+            />
+            <span className="font-display text-lg font-extrabold text-primary sm:text-xl">
+              KODBARS
+            </span>
           </Link>
-          <nav
-            aria-label="Navigation principale"
-            className="hidden items-center gap-6 text-sm font-semibold md:flex"
-          >
-            {nav.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                className="hover:text-highlight"
-                activeProps={{ className: "text-highlight", "aria-current": "page" }}
-                activeOptions={{ exact: true }}
-              >
-                {n.label}
-              </Link>
-            ))}
-          </nav>
-          <details
-            ref={menu}
-            className="mobile-menu md:hidden"
-            onKeyDown={(e) => {
-              if (e.key === "Escape") closeMenu();
-            }}
-          >
-            <summary className="cursor-pointer rounded-md border-2 border-primary px-3 py-2 text-sm font-bold">
-              Menu
-            </summary>
+          <div className="flex items-center gap-2 sm:gap-6">
             <nav
-              aria-label="Navigation mobile"
-              className="absolute inset-x-0 top-full border-b-2 border-primary bg-card px-5 py-4 shadow-lg"
+              aria-label="Navigation principale"
+              className="hidden items-center gap-6 text-sm font-semibold md:flex"
             >
               {nav.map((n) => (
                 <Link
                   key={n.to}
                   to={n.to}
-                  onClick={() => menu.current?.removeAttribute("open")}
-                  className="block rounded px-3 py-3 font-semibold hover:bg-secondary"
-                  activeProps={{ "aria-current": "page", className: "text-highlight" }}
+                  className="hover:text-highlight"
+                  activeProps={{ className: "text-highlight", "aria-current": "page" }}
                   activeOptions={{ exact: true }}
                 >
                   {n.label}
                 </Link>
               ))}
             </nav>
-          </details>
+            <ThemeToggle />
+            <details
+              ref={menu}
+              className="mobile-menu md:hidden"
+              onKeyDown={(e) => {
+                if (e.key === "Escape") closeMenu();
+              }}
+            >
+              <summary className="cursor-pointer whitespace-nowrap rounded-md border-2 border-primary px-3 py-2 text-sm font-bold">
+                Menu
+              </summary>
+              <nav
+                aria-label="Navigation mobile"
+                className="absolute inset-x-0 top-full border-b-2 border-primary bg-card px-5 py-4 shadow-lg"
+              >
+                {nav.map((n) => (
+                  <Link
+                    key={n.to}
+                    to={n.to}
+                    onClick={() => menu.current?.removeAttribute("open")}
+                    className="block rounded px-3 py-3 font-semibold hover:bg-secondary"
+                    activeProps={{ "aria-current": "page", className: "text-highlight" }}
+                    activeOptions={{ exact: true }}
+                  >
+                    {n.label}
+                  </Link>
+                ))}
+              </nav>
+            </details>
+          </div>
         </div>
       </header>
       <main id="contenu" tabIndex={-1} className="flex-1">
         {children}
       </main>
-      <footer className="border-t-2 border-primary bg-primary text-primary-foreground">
+      <footer className="border-t-2 border-primary bg-primary text-primary-foreground dark:bg-card dark:text-foreground">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 text-sm sm:grid-cols-3">
           <div>
             <p className="font-display text-lg font-extrabold">KODBARS</p>

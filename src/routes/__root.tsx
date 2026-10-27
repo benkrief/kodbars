@@ -114,8 +114,14 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{document.documentElement.classList.toggle("dark",localStorage.getItem("kodbars-theme")==="dark")}catch{}',
+          }}
+        />
         <HeadContent />
       </head>
       <body>
