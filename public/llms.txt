@@ -1,0 +1,10 @@
+# Kodbars
+
+> Kodbars (by BSKonseil) est une agence de développement web basée aux Lilas (93260), près de Paris, dirigée par Benjamin Krief. Elle crée des sites vitrines, des applications web sur-mesure et accompagne le référencement SEO et GEO des indépendants et PME en France.
+
+## Pages
+- [Accueil](/): présentation et questions fréquentes
+- [Services](/services): site vitrine, application web, SEO & GEO, maintenance
+- [Méthode](/methode): les 5 étapes d'un projet
+- [Contact](/contact): devis gratuit sous 48 h
+- [Mentions légales](/mentions-legales)

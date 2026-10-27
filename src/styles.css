@@ -1,0 +1,109 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-display: "Archivo", "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.375rem;
+  --background: oklch(0.99 0.003 240);
+  --foreground: oklch(0.27 0.08 255);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.27 0.08 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.27 0.08 255);
+  /* navy from the KODBARS lettering */
+  --primary: oklch(0.31 0.09 255);
+  --primary-foreground: oklch(0.99 0.003 240);
+  --secondary: oklch(0.96 0.01 230);
+  --secondary-foreground: oklch(0.31 0.09 255);
+  --muted: oklch(0.96 0.01 230);
+  --muted-foreground: oklch(0.5 0.04 250);
+  /* cyan from the K */
+  --accent: oklch(0.78 0.13 210);
+  --accent-foreground: oklch(0.25 0.08 255);
+  /* orange from the K */
+  --highlight: oklch(0.74 0.16 50);
+  --highlight-foreground: oklch(0.22 0.05 50);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0.02 240);
+  --input: oklch(0.88 0.02 240);
+  --ring: oklch(0.78 0.13 210);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  transition: transform 0.15s, box-shadow 0.15s;
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--highlight);
+  }
+}
+@utility btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+@utility btn-outline {
+  background: var(--card);
+  color: var(--primary);
+}
+@utility tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--highlight);
+  font-weight: 600;
+}
